@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,12 @@ Route::middleware(['auth', 'verified'])
         Route::get('edit/{project}', [ProjectController::class, 'edit'])->name('edit');
         Route::put('{project}', [ProjectController::class, 'update'])->name('update');
         Route::delete('/{project}', [ProjectController::class, 'destroy'])->name('destroy');    
+    });
+Route::middleware(['auth','verified'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function(){
+        Route::resource('type', TypeController::class);
     });
 
 require __DIR__.'/auth.php';
