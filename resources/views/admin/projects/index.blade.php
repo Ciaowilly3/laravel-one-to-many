@@ -25,6 +25,7 @@
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Git_link</th>
                         <th scope="col">Thumbnail</th>
                         <th scope="col"></th>
@@ -36,6 +37,10 @@
                     <tr>
                         <th>{{$project->name}}</th>
                         <td>{{$project->description}}</td>
+                        <td>
+                            <div class="font-weight-bold">{{$project->type?->name}}</div>
+                            <p><small>{{$project->type?->description}}</small></p>
+                        </td>
                         <td>
                             <button class="btn btn-dark rounded-circle"><a href="{{$project->git_link}}" class="text-white"><i class="fa-brands fa-github"></i></a></button>
                         </td>

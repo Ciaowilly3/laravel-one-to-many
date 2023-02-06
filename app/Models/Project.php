@@ -9,7 +9,7 @@ class Project extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "name", "description", "cover_img", "git_link"
+        "type_id","name", "description", "cover_img", "git_link"
     ];
 
     public function type(){

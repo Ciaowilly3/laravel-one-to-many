@@ -28,6 +28,15 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label class="form-label">Tipo</label>
+                <select name="type_id" class="w-75 mx-auto form-select @error('type_id') is-invalid @enderror">
+                <option></option>
+                @foreach ($types as $type)
+                    <option value="{{$type->id}}">{{$type->name}}</option>
+                @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Carica l'immagine del progetto</label>
                 <input type="file" class="form-control text-center w-75 mx-auto
                 @error('cover_img') is-invalid @elseif(old('cover_img')) is-valid @enderror" 

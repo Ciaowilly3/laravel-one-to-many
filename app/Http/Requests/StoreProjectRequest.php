@@ -28,6 +28,7 @@ class StoreProjectRequest extends FormRequest
             'description' =>'required|string',
             'cover_img' =>'required|image',
             'git_link' =>'required|url',
+            "type_id" => "nullable|exists:types,id"
         ];
     }
     public function messages() {
@@ -40,6 +41,7 @@ class StoreProjectRequest extends FormRequest
             "cover_img.image" => "L'immagine deve essere un URL",
             "git_link.url" => "Il link deve essere un URL",
             "git_link.required" => "Il link deve esserci",
+            "type_id" => "come hai fatto a selezionare un'opzione inesistente?!"
         ];
     }
 }

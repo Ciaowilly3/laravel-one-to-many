@@ -28,6 +28,7 @@ class UpdateProjectRequest extends FormRequest
             'description' =>'string',
             'cover_img' =>'image',
             'git_link' =>'url',
+            "type_id" => "nullable|exists:types,id"
         ];
     }
     public function messages() {
@@ -36,6 +37,7 @@ class UpdateProjectRequest extends FormRequest
             "name.max" =>  "Il nome deve avere massimo :max caratteri",
             "cover_img.image" => "L'immagine deve essere caricata",
             "git_link.url" => "Il link deve essere un URL",
+            "type_id" => "come hai fatto a selezionare un'opzione inesistente?!"
         ];
     }
 }
