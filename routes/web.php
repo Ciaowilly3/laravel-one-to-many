@@ -46,7 +46,7 @@ Route::middleware(['auth','verified'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function(){
-        Route::resource('type', TypeController::class);
+        Route::resource('types', TypeController::class);
     });
 
 require __DIR__.'/auth.php';

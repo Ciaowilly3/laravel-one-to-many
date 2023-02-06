@@ -1,13 +1,21 @@
 @extends('layouts.app')
 
 @section("content")
-    <nav class="navbar navbar-light bg-light justify-content-center align-items-end rounded-3 shadow-sm">
-        
-            <div class="fs-5 pe-3">Want to create a new project? Just click this button!!</div>
+    <nav class="navbar navbar-light bg-light flex-column rounded-3 shadow-sm align-items-center">
+        <div class="d-flex align-items-end py-3">
+            <div class="fs-5 pe-3">Want to create a new <strong>project?</strong> Just click this button!!</div>
             <button class="btn btn-primary btn-sm">
                 <a href="{{route('admin.projects.create')}}" 
                 class="text-white text-decoration-none"><i class="fa-solid fa-plus"></i></a> 
             </button>
+        </div>
+        <div class="d-flex align-items-end py-3">
+            <div class="fs-5 pe-3">Want to create a new <strong>type?</strong> Just click this button!!</div>
+            <button class="btn btn-primary btn-sm">
+                <a href="{{route('admin.types.create')}}" 
+                class="text-white text-decoration-none"><i class="fa-solid fa-plus"></i></a> 
+            </button>
+        </div>
         
     </nav>
     <div class="table-container mt-3 bg-white rounded-3 shadow-md p-5">

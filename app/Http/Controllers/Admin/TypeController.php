@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTypeRequest;
+use App\Models\Type;
 use Illuminate\Http\Request;
+
+use function Ramsey\Uuid\v1;
 
 class TypeController extends Controller
 {
@@ -24,7 +28,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.types.create');
     }
 
     /**
@@ -33,9 +37,13 @@ class TypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTypeRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $type = Type::create($data);
+
+        return redirect()->route('admin.projects.index');
     }
 
     /**
